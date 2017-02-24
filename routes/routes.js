@@ -20,8 +20,9 @@ var transporter = nodemailer.createTransport({
 router.get("/", function(req, res) {
     res.sendFile(path.resolve(__dirname + '/../views/index.html'));
 })
-router.post('/mail', function(req, res) {
+router.post('/mail', function(req, res, next) {
     var person = req.body;
+    console.log(person);
     var mailOptions = {
         to: 'bojan87vasilevski@gmail.com',
         from: person.email,
