@@ -1,18 +1,20 @@
 {
-  "name": "bojanvas",
-  "version": "1.0.0",
-  "description": "version 4 portfolio",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "portfolio"
-  ],
-  "author": "Bojan Vasilevski",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.16.1",
-    "express": "^4.14.1"
-  }
+    "name": "bojanvas",
+    "version": "1.0.0",
+    "description": "version 4 portfolio",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "keywords": [
+        "portfolio"
+    ],
+    "author": "Bojan Vasilevski",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.16.1",
+        "express": "^4.14.1",
+        "nodemailer": "^3.1.3"
+    }
 }
