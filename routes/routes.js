@@ -4,6 +4,9 @@ var path = require('path');
 var nodemailer = require('nodemailer');
 var router = express.Router();
 
+router.use(body.json());
+router.use(body.urlencoded({ extended: false }));
+
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
@@ -26,10 +29,10 @@ router.post('/mail', function(req, res, next) {
     var mailOptions = {
         to: 'bojan87vasilevski@gmail.com',
         from: person.email,
-        subject: "From" + person.name + " " + person.surname,
+        subject: "From " + person.name + " " + person.surname,
         text: person.email + " message is :" + person.message
     }
-    transporter.sendMail(mailOptions, function(error, info) {
+    transporter.sendMail(mailOptions, function(error, response) {
         if (error) {
             return console.log(error);
         }
