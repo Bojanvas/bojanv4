@@ -152,7 +152,7 @@
     }
     
     .part1 {
-        width: 79%;
+        width: 1500px;
         margin: 0 auto;
     }
     
@@ -161,7 +161,7 @@
     }
     
     .part1 h1 {
-        width: 100%;
+        width: 1500px;
         background: url('img/line.png') repeat-x left center;
         height: 50px;
         text-align: center;
@@ -313,7 +313,7 @@
         background: url("img/line.png") left center;
         height: 50px;
         text-align: center;
-        width: 71%;
+        width: 1010px;
         font-family: 'Rosarivo', serif;
         color: #737373;
     }
@@ -455,7 +455,7 @@
         background: url("img/line.png") left center;
         height: 50px;
         text-align: center;
-        width: 71%;
+        width: 1010px;
         font-family: 'Rosarivo', serif;
         color: #737373;
     }
@@ -548,7 +548,7 @@
         background: url("img/line.png") left center;
         height: 50px;
         text-align: center;
-        width: 53%;
+        width: 1010px;
         font-family: 'Rosarivo', serif;
         color: #737373;
     }
@@ -626,6 +626,9 @@
         }
         .work div h2 {
             font-size: 27px;
+        }
+        .part1 {
+            width: 79%;
         }
         .part1 h1 {
             margin: 0 auto;
