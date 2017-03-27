@@ -772,6 +772,7 @@
         .meimg {
             float: none;
             display: block;
+            width: 48%;
             height: 100px;
             margin: 10px auto;
         }
