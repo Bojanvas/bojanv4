@@ -1,3 +1,11 @@
+$(window).on('load', function() {
+    $.ajax({
+        url: '/view',
+        method: 'POST',
+        data: '1',
+    })
+});
+
 $(document).ready(function() {
     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
     setInterval(rotate, 4000);
@@ -16,6 +24,11 @@ $(document).ready(function() {
         if (width > 1380) {
             console.log('desktop');
             if (top > 1320) {
+                $.ajax({
+                    url: '/viewsecond',
+                    method: 'POST',
+                    data: '1',
+                })
                 $(document).ready(function() {
                     $('.skillbar').each(function() {
                         $(this).find('.skillbar-bar').animate({
@@ -65,7 +78,7 @@ $(document).ready(function() {
         // mobile
         if (width < 600) {
             console.log('Mobile');
-            if (top > 2700) {
+            if (top > 6600) {
                 $(document).ready(function() {
                     $('.skillbar').each(function() {
                         $(this).find('.skillbar-bar').animate({
