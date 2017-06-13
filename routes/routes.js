@@ -1,9 +1,18 @@
 var express = require('express');
 var body = require('body-parser');
 var path = require('path');
+var mongoose = require('mongoose');
 var nodemailer = require('nodemailer');
 var router = express.Router();
 
+var countSchema = mongoose.Schema;
+
+var View = new countSchema({
+    firstviews: Number,
+    secondviews: Number,
+}, { collection: 'view' });
+
+var Visits = mongoose.model('Visits', View);
 router.use(body.json());
 router.use(body.urlencoded({ extended: false }));
 
@@ -38,6 +47,38 @@ router.post('/mail', function(req, res, next) {
         }
         console.log('message send');
         res.redirect('/');
+    })
+})
+router.post('/view', function(req, res) {
+    var view = req.body;
+    var id = '5940224d734d1d6c423d7ab4';
+    Visits.findOne({ _id: id, }, function(error, count) {
+        if (error) {
+            console.log(error);
+        } else {
+            count.firstviews = count.firstviews + 1;
+            count.save(function(err) {
+                if (err) {
+                    console.error('ERROR!');
+                }
+            });
+        }
+    })
+})
+router.post('/viewsecond', function(req, res) {
+    var view = req.body;
+    var id = '5940224d734d1d6c423d7ab4';
+    Visits.findOne({ _id: id, }, function(error, count) {
+        if (error) {
+            console.log(error);
+        } else {
+            count.secondviews = count.secondviews + 1;
+            count.save(function(err) {
+                if (err) {
+                    console.error('ERROR!');
+                }
+            });
+        }
     })
 })
 module.exports = router;
