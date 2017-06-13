@@ -6,7 +6,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 
-mongoose.connect("mongodb://" + DB.USER + ":" + DB.PASS + "@ds125262.mlab.com:25262/couterview", function() {
+mongoose.connect("mongodb://" + process.env.DB.USER + ":" + process.env.DB.PASS + "@ds125262.mlab.com:25262/couterview", function() {
     console.log('db-conected');
 });
 app.use(express.static(__dirname + '/public'))
