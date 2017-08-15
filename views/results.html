@@ -18,9 +18,9 @@
         success: function(response) {
             console.log(response);
             if (response) {
-                response.forEach(elem) {
+                response.forEach(function(elem) {
                     $('.results').append('<ul><li>' + elem.name + '</li><li>' + elem.score + '</li><li>' + elem.date + '</li><li>' + elem.dificult + '</li></ul>');
-                }
+                });
 
             } else {
                 $('.results').append('no-results');
