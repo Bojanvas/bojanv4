@@ -5,27 +5,39 @@
 </head>
 
 <body>
-    <h1>Results</h1>
-    <div class="results"></div>
+    <h1 style='text-align:center;'>Results</h1>
+    <div class="results" style='display:flex;'>
+        <div class="easy" style='width:25%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
+            <h4 style=' text-align:center; font-weight:bold; '>Easy</h4>
+            <ul class='re '>
+            </ul>
+        </div>
+        <div class="normal" style='width:25%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
+            <h4 style='text-align:center; font-weight:bold; '>Normal</h4>
+            <ul class='re '></ul>
+        </div>
+        <div class="hard" style='width:25%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
+            <h4 style='text-align:center; font-weight:bold; '>Hard</h4>
+            <ul class='re '></ul>
+        </div>
+    </div>
 </body>
 <script>
     $.ajax({
-        url: '/results/all',
-        method: 'GET',
+        url: '/results/all ',
+        method: 'GET ',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type ': 'application/json '
         },
         success: function(response) {
             console.log(response);
             if (response) {
                 response.forEach(function(elem) {
-                    $('.results').append('<ul><li>' + elem.name + '</li><li>' + elem.score + '</li><li>' + elem.date + '</li><li>' + elem.dificult + '</li></ul>');
+                    $('.re ').append('<li>Name:' + elem.name + 'Score:' + elem.score + 'Date' + elem.date + 'Dificult:' + elem.dificult + '</li>');
                 });
-
             } else {
-                $('.results').append('no-results');
+                $('.results ').append('no - results ');
             }
-
         },
         error: function(error) {
             console.log(error);
