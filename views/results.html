@@ -33,10 +33,10 @@
             console.log(response);
             if (response) {
                 response.forEach(function(elem) {
-                    $('.re ').append('<li>Name:' + elem.name + 'Score:' + elem.score + 'Date' + elem.date + 'Dificult:' + elem.dificult + '</li>');
+                    $('.re').append('<li>Name:' + elem.name + 'Score:' + elem.score + 'Date' + elem.date + 'Dificult:' + elem.dificult + '</li>');
                 });
             } else {
-                $('.results ').append('no - results ');
+                $('.re').append('no - results ');
             }
         },
         error: function(error) {
