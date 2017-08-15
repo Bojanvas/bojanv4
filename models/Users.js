@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var users = mongoose.schema({
+var users = mongoose.Schema({
     name: String,
     score: Number,
     date: String,
