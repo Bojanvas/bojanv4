@@ -83,8 +83,8 @@ router.post('/viewsecond', function(req, res) {
 })
 router.post('/results', function(req, res) {
     var results = req.body;
-    let User = require('../models/Users');
-    let newUser = new User;
+    let Users = require('../models/Users');
+    let newUser = new Users;
     newUser.name = results.name;
     newUser.score = results.score;
     newUser.date = results.date;
