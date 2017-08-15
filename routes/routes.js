@@ -83,7 +83,18 @@ router.post('/viewsecond', function(req, res) {
 })
 router.post('/results', function(req, res) {
     var results = req.body;
-    console.log(results);
-    res.send('ansers');
+    let User = require('../models/Users');
+    let newUser = new User;
+    newUser.name = results.name;
+    newUser.score = results.score;
+    newUser.date = results.date;
+    newUser.dificult = results.dificult;
+
+    newUser.save(function() {
+        if (err) {
+            console.log(err)
+        }
+    });
+    res.send('Good joob');
 })
 module.exports = router;
