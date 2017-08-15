@@ -9,16 +9,16 @@
     <div class="results" style='display:flex;'>
         <div class="easy" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
             <h4 style=' text-align:center; font-weight:bold; '>Easy</h4>
-            <ul class='re '>
+            <ul class='re-east '>
             </ul>
         </div>
         <div class="normal" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
             <h4 style='text-align:center; font-weight:bold; '>Normal</h4>
-            <ul class='re '></ul>
+            <ul class='re-norm '></ul>
         </div>
         <div class="hard" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
             <h4 style='text-align:center; font-weight:bold; '>Hard</h4>
-            <ul class='re '></ul>
+            <ul class='re-hard '></ul>
         </div>
     </div>
 </body>
@@ -33,7 +33,16 @@
             success: function(response) {
                 if (response) {
                     response.forEach(function(elem) {
-                        $('.re').append('<li>Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                        if (elem.dificult == 'easy') {
+                            $('.re-easy').append('<li>Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                        }
+                        if (elem.dificult == 'normal') {
+                            $('.re-norm').append('<li>Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                        }
+                        if (elem.dificult == 'hard') {
+                            $('.re-hard').append('<li>Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                        }
+
                     });
                 } else {
                     $('.re').append('no - results ');
