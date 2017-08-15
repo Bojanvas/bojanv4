@@ -81,4 +81,9 @@ router.post('/viewsecond', function(req, res) {
         }
     })
 })
+router.post('/results', function(req, res) {
+    var results = req.body;
+    console.log(results);
+    res.send('ansers');
+})
 module.exports = router;
