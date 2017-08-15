@@ -24,10 +24,10 @@
 </body>
 <script>
     $.ajax({
-        url: '/results/all ',
-        method: 'GET ',
+        url: '/results/all',
+        method: 'GET',
         headers: {
-            'Content-Type ': 'application/json '
+            'Content-Type ': 'application/json'
         },
         success: function(response) {
             console.log(response);
@@ -39,9 +39,9 @@
                 $('.re').append('no - results ');
             }
         },
-        error: function(error) {
-            console.log(error);
-        }
+        error: function(response) {
+            console.log(response.status);
+        },
     })
 </script>
 
