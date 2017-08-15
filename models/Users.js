@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
-var users = mongoose.Schema({
+var usersSchema = mongoose.Schema({
     name: String,
     score: Number,
     date: String,
     dificult: String,
 })
 
-const User = mongoose.model('User', users);
+var User = mongoose.model('User', usersSchema);
 module.export = User;
