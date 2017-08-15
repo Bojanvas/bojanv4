@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Results</h1>
+    <div class="results"></div>
+</body>
+<script>
+    $.ajax({
+        url: '/results/all',
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        success: function(response) {
+            console.log(response);
+            if (response) {
+                $('.results').append(response);
+            } else {
+                $('.results').append('no-results');
+            }
+
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    })
+</script>
+
+</html>
