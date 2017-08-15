@@ -81,6 +81,22 @@ router.post('/viewsecond', function(req, res) {
         }
     })
 })
+router.get('/results/all', function(req, res) {
+    let Users = require('../models/Users');
+    Users.find({}, function(error, docs) {
+        if (!error) {
+            console.log(docs);
+        } else {
+            console.log(error)
+            throw error;
+        }
+
+    })
+
+});
+router.get('/results', function(req, res) {
+    res.sendFile(path.resolve(__dirname + '/../views/results.html'));
+})
 router.post('/results', function(req, res) {
     var results = req.body;
     let Users = require('../models/Users');
