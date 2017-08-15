@@ -33,13 +33,13 @@
             success: function(response) {
                 if (response) {
                     response.forEach(function(elem) {
-                        if (elem.dificult == 'easy') {
+                        if (elem.dificult == 'Easy') {
                             $('.re-easy').append('<li>Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
                         }
-                        if (elem.dificult == 'normal') {
+                        if (elem.dificult == 'Normal') {
                             $('.re-norm').append('<li>Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
                         }
-                        if (elem.dificult == 'hard') {
+                        if (elem.dificult == 'Hard') {
                             $('.re-hard').append('<li>Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
                         }
 
