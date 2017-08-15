@@ -85,7 +85,7 @@ router.get('/results/all', function(req, res) {
     let Users = require('../models/Users');
     Users.find({}, function(error, docs) {
         if (!error) {
-            console.log(docs);
+            res.send(docs);
         } else {
             console.log(error)
             throw error;
