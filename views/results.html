@@ -18,7 +18,10 @@
         success: function(response) {
             console.log(response);
             if (response) {
-                $('.results').append('<ul><li>' + response.name + '</li><li>' + response.score + '</li><li>' + response.date + '</li><li>' + response.dificult + '</li></ul>');
+                response.forEach(elem) {
+                    $('.results').append('<ul><li>' + elem.name + '</li><li>' + elem.score + '</li><li>' + elem.date + '</li><li>' + elem.dificult + '</li></ul>');
+                }
+
             } else {
                 $('.results').append('no-results');
             }
