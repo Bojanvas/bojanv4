@@ -37,7 +37,7 @@
                     for (var i = 0; i < response.length; i++) {
                         var j = 1;
                         if (response[i].dificult == 'Easy') {
-                            $('.re-easy').append('<li>' + j + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                            $('.re-easy').append('<li>' + j + 'Name:' + response[i].name + '  Score:' + response[i].score + '  Date' + response[i].date + '  Dificult:' + response[i].dificult + '</li>');
                             j++;
                         }
                     }
