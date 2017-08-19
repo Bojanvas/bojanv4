@@ -10,8 +10,14 @@
     <div class="results" style='display:flex;'>
         <div class="easy" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
             <h4 style=' text-align:center; font-weight:bold; '>Easy</h4>
-            <ul class='listsRes re-easy '>
-            </ul>
+            <table class='listsRes re-easy '>
+                <tr>
+                    <th>Place</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                </tr>
+            </table>
         </div>
         <div class="normal" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
             <h4 style='text-align:center; font-weight:bold; '>Normal</h4>
@@ -39,7 +45,7 @@
                     var p = 1;
                     for (var i = 0; i < response.length; i++) {
                         if (response[i].dificult == 'Easy') {
-                            $('.re-easy').append('<li>' + j + 'Name:' + response[i].name + '  Score:' + response[i].score + '  Date' + response[i].date + '  Dificult:' + response[i].dificult + '</li>');
+                            $('.re-easy').append('<tr><td>' + j + '</td><td>Name:' + response[i].name + '</td><td>Score:' + response[i].score + '</td><td>Date' + response[i].date + '</td></tr>');
                             j++;
                         }
                     }
@@ -52,7 +58,7 @@
                     });
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Hard') {
-                            $('.re-hard').append('<li>' + index + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                            $('.re-hard').append('<li>' + p + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
                             p++;
                         }
                     });
