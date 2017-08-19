@@ -861,3 +861,10 @@
             font-size: 500%;
         }
     }
+    /* results */
+    
+    .lists li {
+        list-style: none;
+        border-bottom: 1px solid black;
+        text-align: center;
+    }
