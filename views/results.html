@@ -10,7 +10,7 @@
     <div class="results" style='display:flex;'>
         <div class="easy" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
             <h4 style=' text-align:center; font-weight:bold; '>Easy</h4>
-            <ul class='listsRes re-east '>
+            <ul class='listsRes re-easy '>
             </ul>
         </div>
         <div class="normal" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
@@ -35,7 +35,9 @@
                 if (response) {
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Easy') {
-                            $('.re-easy').append('<li>' + index + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                            let i = 0;
+                            $('.re-easy').append('<li>' + i + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                            i++;
                         }
                         if (elem.dificult == 'Normal') {
                             $('.re-norm').append('<li>' + index + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
