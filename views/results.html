@@ -34,16 +34,20 @@
             success: function(response) {
                 if (response) {
                     response.forEach(function(elem, index) {
+                        var i = 1;
+                        var j = 1;
+                        var o = 1;
                         if (elem.dificult == 'Easy') {
-                            let i = 0;
                             $('.re-easy').append('<li>' + i + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
                             i++;
                         }
                         if (elem.dificult == 'Normal') {
                             $('.re-norm').append('<li>' + index + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                            j++;
                         }
                         if (elem.dificult == 'Hard') {
                             $('.re-hard').append('<li>' + index + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                            o++;
                         }
 
                     });
