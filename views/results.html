@@ -35,6 +35,8 @@
                 if (response) {
                     // response.forEach(function(elem, index) {
                     var j = 1;
+                    var o = 1;
+                    var p = 1;
                     for (var i = 0; i < response.length; i++) {
                         if (response[i].dificult == 'Easy') {
                             $('.re-easy').append('<li>' + j + 'Name:' + response[i].name + '  Score:' + response[i].score + '  Date' + response[i].date + '  Dificult:' + response[i].dificult + '</li>');
@@ -44,12 +46,14 @@
                     // });
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Normal') {
-                            $('.re-norm').append('<li>' + index + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                            $('.re-norm').append('<li>' + o + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                            o++;
                         }
                     });
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Hard') {
                             $('.re-hard').append('<li>' + index + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
+                            p++;
                         }
                     });
                 } else {
