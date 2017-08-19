@@ -59,20 +59,20 @@
                     var p = 1;
                     for (var i = 0; i < response.length; i++) {
                         if (response[i].dificult == 'Easy') {
-                            $('.re-easy').append('<tr><td>' + j + '</td><td>' + response[i].name + '</td><td>' + response[i].score + '</td><td>' + response[i].date + '</td></tr>');
+                            $('.re-easy').append('<tr><td>' + j + '</td><td>' + response[i].name + '</td><td data-score="' + response[i].score + '">' + response[i].score + '</td><td>' + response[i].date + '</td></tr>');
                             j++;
                         }
                     }
                     // });
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Normal') {
-                            $('.re-norm').append('<tr><td>' + o + '</td><td>' + elem.name + '</td><td>' + elem.score + '</td><td>' + elem.date + '</td></tr>');
+                            $('.re-norm').append('<tr><td>' + o + '</td><td>' + elem.name + '</td><td data-score="' + elem.score + '">' + elem.score + '</td><td>' + elem.date + '</td></tr>');
                             o++;
                         }
                     });
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Hard') {
-                            $('.re-hard').append('<tr><td>' + p + '</td><td>' + elem.name + '</td><td>' + elem.score + '</td><td>' + elem.date + '</td></tr>');
+                            $('.re-hard').append('<tr><td>' + p + '</td><td>' + elem.name + '</td><td data-score="' + elem.score + '">' + elem.score + '</td><td>' + elem.date + '</td></tr>');
                             p++;
                         }
                     });

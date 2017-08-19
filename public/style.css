@@ -868,6 +868,10 @@
         border-collapse: collapse;
     }
     
+    table {
+        margin: 0 auto;
+    }
+    
     table,
     td,
     th {
