@@ -864,8 +864,12 @@
     /* results */
     
     .listsRes li {
-        padding: 4px 4px;
-        list-style: none;
-        border-bottom: 1px solid black;
         text-align: center;
+        border-collapse: collapse;
+    }
+    
+    table,
+    td,
+    th {
+        border: 1px solid black;
     }
