@@ -53,11 +53,9 @@
             // },
             success: function(response) {
                 if (response) {
-                    for (var l = 0; l < response.length; l++) {
-                        response.sort(function(response[l]) {
-                            return response[l].score - response[l].score;
-                        })
-                    }
+                    response.sort(function(a, b) {
+                        return parseFloat(b.score) - parseFloat(a.score)
+                    });
                     // response.forEach(function(elem, index) {
                     var j = 1;
                     var o = 1;
