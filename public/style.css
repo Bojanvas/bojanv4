@@ -863,7 +863,8 @@
     }
     /* results */
     
-    .lists li {
+    .listsRes li {
+        padding: 4px 4px;
         list-style: none;
         border-bottom: 1px solid black;
         text-align: center;
