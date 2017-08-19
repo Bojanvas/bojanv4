@@ -39,7 +39,7 @@
                         var o = 1;
                         if (elem.dificult == 'Easy') {
                             $('.re-easy').append('<li>' + i + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
-                            i++;
+                            var i = i + 1;
                         }
                         if (elem.dificult == 'Normal') {
                             $('.re-norm').append('<li>' + index + 'Name:' + elem.name + '  Score:' + elem.score + '  Date' + elem.date + '  Dificult:' + elem.dificult + '</li>');
