@@ -3,7 +3,6 @@ var body = require('body-parser');
 var router = require('./routes/routes.js');
 var mongoose = require('mongoose');
 var app = express();
-var port = process.env.PORT || 3000;
 
 
 mongoose.connect("mongodb://" + process.env.DBUSER + ":" + process.env.DBPASS + "@ds125262.mlab.com:25262/couterview", function() {
@@ -14,6 +13,7 @@ app.use('/', router);
 app.use(body.json());
 app.use(body.urlencoded({ extended: false }));
 
-app.listen(port, function() {
-    console.log('conected');
-})
+
+app.listen(process.env.PORT || 3000, function() {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
