@@ -106,9 +106,9 @@ router.post('/results', function(req, res) {
     newUser.date = results.date;
     newUser.dificult = results.dificult;
 
-    newUser.save(function() {
+    newUser.save(function(err) {
         if (err) {
-            console.log(err)
+            console.log('faild to save user this is the error:' + err)
         }
     });
     res.send('Good joob');
