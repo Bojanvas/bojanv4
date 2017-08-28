@@ -90,9 +90,19 @@ router.get('/results/all', function(req, res) {
             console.log(error)
             throw error;
         }
-
     })
-
+});
+router.get('/results/:dif', function(req, res) {
+    var dif = req.params.dif;
+    let Users = require('../models/Users');
+    Users.find({ dificult: dif }, function(error, docs) {
+        if (!error) {
+            res.send(docs);
+        } else {
+            console.log(error)
+            throw error;
+        }
+    })
 });
 router.get('/results', function(req, res) {
     res.sendFile(path.resolve(__dirname + '/../views/results.html'));
