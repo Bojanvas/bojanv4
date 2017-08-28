@@ -95,7 +95,7 @@ router.get('/results/all', function(req, res) {
 router.get('/results/:dif', function(req, res) {
     var dif = req.params.dif;
     let Users = require('../models/Users');
-    Users.find({}, dif, function(error, docs) {
+    Users.find({ 'dificult': 'easy' }, function(error, docs) {
         if (!error) {
             res.send(docs);
         } else {
