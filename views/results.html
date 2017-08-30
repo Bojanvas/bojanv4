@@ -69,10 +69,18 @@
                         }
                     }
                     // });
+
+                    var rows = 25;
+                    var row = 1;
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Normal') {
-                            $('.re-norm').append('<tr><td>' + o + '</td><td>' + elem.name + '</td><td data-score="' + elem.score + '">' + elem.score + '</td><td>' + elem.date + '</td></tr>');
-                            o++;
+                            if (rows < index) {
+                                $('.re-norm').append('<tr class="' + row + '"><td>' + o + '</td><td>' + elem.name + '</td><td data-score="' + elem.score + '">' + elem.score + '</td><td>' + elem.date + '</td></tr>');
+                                o++;
+                            } else {
+                                rows = rows + 25;
+                                row++;
+                            }
                         }
                     });
                     response.forEach(function(elem, index) {
