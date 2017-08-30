@@ -69,18 +69,10 @@
                         }
                     }
                     // });
-
-                    var rows = 25;
-                    var row = 1;
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Normal') {
-                            if (rows => index) {
-                                $('.re-norm').append('<tr class="' + row + '"><td>' + o + '</td><td>' + elem.name + '</td><td data-score="' + elem.score + '">' + elem.score + '</td><td>' + elem.date + '</td></tr>');
-                                o++;
-                            } else {
-                                rows = rows + 25;
-                                row++;
-                            }
+                            $('.re-norm').append('<tr><td>' + o + '</td><td>' + elem.name + '</td><td data-score="' + elem.score + '">' + elem.score + '</td><td>' + elem.date + '</td></tr>');
+                            o++;
                         }
                     });
                     response.forEach(function(elem, index) {
@@ -97,7 +89,39 @@
                 console.log(response);
             },
         })
+
     })
+    $(document).ready(function() {
+        var totalRows = $('.listsRes').find('tbody tr:has(td)').length;
+        var recordPerPage = 25;
+        var totalPages = Math.ceil(totalRows / recordPerPage);
+        var $pages = $('<div id="pages"></div>');
+        for (i = 0; i < totalPages; i++) {
+            $('<span>&nbsp;' + (i + 1) + '</span>').appendTo($pages);
+        }
+        $pages.appendTo('.listsRes');
+        $('.pageNumber').hover(
+            function() {
+                $(this).addClass('focus');
+            },
+            function() {
+                $(this).removeClass('focus');
+            }
+        );
+        $('table').find('tbody tr:has(td)').hide();
+        var tr = $('table tbody tr:has(td)');
+        for (var i = 0; i <= recordPerPage - 1; i++) {
+            $(tr[i]).show();
+        }
+        $('span').click(function(event) {
+            $('.listsRes').find('tbody tr:has(td)').hide();
+            var nBegin = ($(this).text() - 1) * recordPerPage;
+            var nEnd = $(this).text() * recordPerPage - 1;
+            for (var i = nBegin; i <= nEnd; i++) {
+                $(tr[i]).show();
+            }
+        });
+    });
 </script>
 
 </html>
