@@ -877,3 +877,17 @@
     th {
         border: 1px solid black;
     }
+    
+    .pages {
+        text-align: center;
+    }
+    
+    .page {
+        padding: 5px;
+        border: 1px solid black;
+        font-size: 18px;
+    }
+    
+    .page:hover {
+        cursor: pointer;
+    }
