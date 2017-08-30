@@ -31,6 +31,7 @@
                     <th>Date</th>
                 </tr>
             </table>
+            <div class="pages"> </div>
         </div>
         <div class="hard" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
             <h4 style='text-align:center; font-weight:bold; '>Hard</h4>
@@ -77,6 +78,7 @@
                                 $('.re-norm').append('<tr class="' + row + '"><td>' + o + '</td><td>' + elem.name + '</td><td data-score="' + elem.score + '">' + elem.score + '</td><td>' + elem.date + '</td></tr>');
                                 o++;
                             } else {
+                                $('.pages').append('<span>' + row + '</span>');
                                 row = row + 1;
                                 rows = rows + 25;
                             }
