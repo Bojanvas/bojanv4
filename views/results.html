@@ -106,8 +106,8 @@
             $('.re-norm').find('tr').hide();
             $('.re-norm').find('.1').show();
         }
-        $('body').on('click','.page',function(){
-            var val = $('.page').val();
+        $('body').on('click','.page',function(event){
+            var val = $(event.target).val();
             console.log('started'+ val);
             $('.re-norm').find('tr').hide();
             $('.re-norm').find('.'+val).show();
