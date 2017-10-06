@@ -48,6 +48,9 @@
 </body>
 <script>
     $(document).ready(function() {
+        function pagination(row) {
+            console.log(row);
+        }
         $.ajax({
             url: '/results/all',
             method: 'GET',
@@ -74,7 +77,7 @@
                     var row = 1;
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Normal') {
-                            if (rows >= index) {
+                            if (rows >= o) {
                                 $('.re-norm').append('<tr class="' + row + '"><td>' + o + '</td><td>' + elem.name + '</td><td data-score="' + elem.score + '">' + elem.score + '</td><td>' + elem.date + '</td></tr>');
                                 o++;
                             } else {
@@ -99,13 +102,11 @@
             },
         })
         function hide_start(){
+            console.log('started');
             $('.re-norm').find('tr').hide();
             $('.re-norm').find('.1').show();
         }
         hide_start();
-        function pagination(row) {
-            console.log(row);
-        }
     })
 </script>
 
