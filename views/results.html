@@ -85,8 +85,8 @@
                                 row = row + 1;
                                 rows = rows + 25;
                             }
-                            $('.pages').append('<span class="page" >' + row+1 + '</span>');
                         }
+                        $('.pages').append('<span class="page" >' + row+1 + '</span>');
                     });
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Hard') {
