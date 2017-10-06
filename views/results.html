@@ -85,6 +85,7 @@
                                 row = row + 1;
                                 rows = rows + 25;
                             }
+                            $('.pages').append('<span class="page" >' + row+1 + '</span>');
                         }
                     });
                     response.forEach(function(elem, index) {
@@ -108,7 +109,7 @@
         }
         $('body').on('click','.page',function(event){
             var val = $(event.target).text();
-            console.log('started'+ val);
+
             $('.re-norm').find('tr').hide();
             $('.re-norm').find('.'+val).show();
         })
