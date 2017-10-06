@@ -10,7 +10,7 @@
 <body>
     <h1 style='text-align:center;'>Results</h1>
     <div class="results" style='display:flex;'>
-        <div class="easy" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
+        <div class="easy" style='width:30%; margin:0 1%; border:1px solid black; background-color:#eeeeee;'>
             <h4 style=' text-align:center; font-weight:bold; '>Easy</h4>
             <table class='listsRes re-easy table table-bordered'>
                 <tr>
@@ -21,7 +21,7 @@
                 </tr>
             </table>
         </div>
-        <div class="normal" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
+        <div class="normal" style='width:30%; margin:0 1%; border:1px solid black;  background-color:#eeeeee;'>
             <h4 style='text-align:center; font-weight:bold; '>Normal</h4>
             <table class='listsRes re-norm table table-bordered'>
                 <tr>
@@ -33,7 +33,7 @@
             </table>
             <div class="pages"> </div>
         </div>
-        <div class="hard" style='width:30%; margin:0 1%; border:1px solid black; border-radius:4%; background-color:#eeeeee;'>
+        <div class="hard" style='width:30%; margin:0 1%; border:1px solid black;  background-color:#eeeeee;'>
             <h4 style='text-align:center; font-weight:bold; '>Hard</h4>
             <table class='listsRes re-hard table table-bordered'>
                 <tr>
@@ -103,12 +103,12 @@
             },
         })
         function hide_start(){
-            console.log('started');
             $('.re-norm').find('tr').hide();
             $('.re-norm').find('.1').show();
         }
         $('.page').on('click',function(){
             var val = $('.page').val();
+            console.log('started'+ val);
             $('.re-norm').find('tr').hide();
             $('.re-norm').find('.'+val).show();
         })
