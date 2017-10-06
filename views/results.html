@@ -86,7 +86,6 @@
                                 rows = rows + 25;
                             }
                         }
-                        $('.pages').append('<span class="page" >' + row+1 + '</span>');
                     });
                     response.forEach(function(elem, index) {
                         if (elem.dificult == 'Hard') {
@@ -94,6 +93,7 @@
                             p++;
                         }
                     });
+                    $('.pages').append('<span class="page" >' + row+1 + '</span>');
                     hide_start();
                 } else {
                     $('.re').append('no - results ');
