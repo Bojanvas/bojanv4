@@ -115,6 +115,7 @@ router.post('/results', function(req, res) {
     newUser.score = results.score;
     newUser.date = results.date;
     newUser.dificult = results.dificult;
+    newUser.location = results.location;
 
     newUser.save(function(err) {
         if (err) {

@@ -5,6 +5,7 @@ var usersSchema = mongoose.Schema({
     score: Number,
     date: String,
     dificult: String,
+    location: String,
 })
 
 var User = mongoose.model('User', usersSchema);
