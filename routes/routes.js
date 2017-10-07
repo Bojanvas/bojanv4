@@ -109,6 +109,7 @@ router.get('/results', function(req, res) {
 })
 router.post('/results', function(req, res) {
     var results = req.body;
+    console.log(results);
     let Users = require('../models/Users');
     let newUser = new Users;
     newUser.name = results.name;
