@@ -104,6 +104,19 @@ router.get('/results/:dif', function(req, res) {
         }
     })
 });
+
+router.get('/results/Levels', function(req, res) {
+    var dif = req.params.dif;
+    let Levels = require('../models/Levels');
+    Users.find({}, function(error, docs) {
+        if (!error) {
+            res.send(docs);
+        } else {
+            console.log(error)
+            throw error;
+        }
+    })
+});
 router.get('/results', function(req, res) {
     res.sendFile(path.resolve(__dirname + '/../views/results.html'));
 })
@@ -124,5 +137,43 @@ router.post('/results', function(req, res) {
         }
     });
     res.send('Good joob');
+})
+
+router.post('/levels', function(req, res) {
+    var levels = req.body;
+    console.log(levels);
+    let Levels = require('../models/Levels');
+    let newLevels = new Levels;
+    newLevels.findOne({"id":levels.id},function(error, docs){
+        console.log("this is docs : "+ docs + "this is length"+docs.length+ "this is type :"+typeof(docs) );
+        if(docs){
+            if (error) {
+                console.log(error);
+            } else {
+                docs.name = levels.name;
+                docs.location = levels.location;
+                docs.level = levels.level;
+
+                docs.save(function(err) {
+                    if (err) {
+                        console.error('ERROR!');
+                    }
+                });
+            }
+        } else {
+            newLevels.id = levels.id;
+            newLevels.name = levels.name;
+            newLevels.location = levels.location;
+            newLevels.level = levels.level;
+        
+            newLevels.save(function(err) {
+                if (err) {
+                    console.log('faild to save user this is the error:' + err)
+                }
+            });
+            res.send('Good joob');
+        }
+    })
+
 })
 module.exports = router;
