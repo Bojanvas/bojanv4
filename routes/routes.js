@@ -140,7 +140,7 @@ router.post('/results', function(req, res) {
 
 router.post('/levels', function(req, res) {
     var level = req.body;
-    console.log(levels);
+    console.log(level);
     let Levels = require('../models/Levels');
     Levels.findOne({"id":level.id},function(error, docs){
         console.log("this is docs : "+ docs + "this is length"+docs.length+ "this is type :"+typeof(docs) );
