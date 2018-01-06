@@ -81,6 +81,18 @@ router.post('/viewsecond', function(req, res) {
         }
     })
 })
+router.get('/results/levels', function(req, res) {
+    let Levels = require('../models/Levels');
+    Levels.find({}, function(error, docs) {
+        if (!error) {
+            res.send(docs);
+        } else {
+            console.log(error)
+            throw error;
+        }
+    })
+});
+
 router.get('/results/all', function(req, res) {
     let Users = require('../models/Users');
     Users.find({}, function(error, docs) {
@@ -105,17 +117,6 @@ router.get('/results/:dif', function(req, res) {
     })
 });
 
-router.get('/results/levels', function(req, res) {
-    let Levels = require('../models/Levels');
-    Levels.find({}, function(error, docs) {
-        if (!error) {
-            res.send(docs);
-        } else {
-            console.log(error)
-            throw error;
-        }
-    })
-});
 router.get('/results', function(req, res) {
     res.sendFile(path.resolve(__dirname + '/../views/results.html'));
 })
