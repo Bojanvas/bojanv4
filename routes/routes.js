@@ -107,7 +107,7 @@ router.get('/results/:dif', function(req, res) {
 
 router.get('/results/Levels', function(req, res) {
     let Levels = require('../models/Levels');
-    Users.find({}, function(error, docs) {
+    Levels.find({}, function(error, docs) {
         if (!error) {
             res.send(docs);
         } else {
