@@ -139,19 +139,18 @@ router.post('/results', function(req, res) {
 })
 
 router.post('/levels', function(req, res) {
-    var levels = req.body;
+    var level = req.body;
     console.log(levels);
     let Levels = require('../models/Levels');
-    let newLevels = new Levels;
-    newLevels.findOne({"id":levels.id},function(error, docs){
+    newLevels.findOne({"id":level.id},function(error, docs){
         console.log("this is docs : "+ docs + "this is length"+docs.length+ "this is type :"+typeof(docs) );
         if(docs){
             if (error) {
                 console.log(error);
             } else {
-                docs.name = levels.name;
-                docs.location = levels.location;
-                docs.level = levels.level;
+                docs.name = level.name;
+                docs.location = level.location;
+                docs.level = level.level;
 
                 docs.save(function(err) {
                     if (err) {
@@ -160,10 +159,11 @@ router.post('/levels', function(req, res) {
                 });
             }
         } else {
-            newLevels.id = levels.id;
-            newLevels.name = levels.name;
-            newLevels.location = levels.location;
-            newLevels.level = levels.level;
+            var newLevels = new Levels;
+            newLevels.id = level.id;
+            newLevels.name = level.name;
+            newLevels.location = level.location;
+            newLevels.level = level.level;
         
             newLevels.save(function(err) {
                 if (err) {
