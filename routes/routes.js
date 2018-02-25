@@ -32,6 +32,9 @@ var transporter = nodemailer.createTransport({
 router.get("/", function(req, res) {
     res.sendFile(path.resolve(__dirname + '/../views/index.html'));
 })
+router.get("/policy", function(req, res) {
+    res.sendFile(path.resolve(__dirname + '/../views/policy.html'));
+})
 router.post('/mail', function(req, res, next) {
     var person = req.body;
     console.log(person);
@@ -89,6 +92,11 @@ router.get('/results/levels', function(req, res) {
         } else {
             console.log(error)
             throw error;
+        }
+        if(docs){
+            console.log('query sucseess');
+        } else {
+            console.log('db empty');
         }
     })
 });
